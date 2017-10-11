@@ -1,25 +1,25 @@
 'use strict';
 
 var firstAndPike = {
-  min_customer: 23,
-  max_customer: 65,
-  avg_cookies: 6.3,
+  minCustomer: 23,
+  maxCustomer: 65,
+  avgCookies: 6.3,
   arrTime: [],
   arrCookies: [],
   customerNum: function() { // generates a random number of customers per hour
-    var avg_customer = Math.floor(Math.random() * (this.max_customer - this.min_customer + 1)) + this.min_customer;
-    return avg_customer;
+    var avgCustomer = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer + 1)) + this.minCustomer;
+    return avgCustomer;
   },
   resultsObj: {},
   cookiesPerHour: function() { // calculates number of cookies purchased per hour
     for(var i = 0; i < 15; i++) {
       var time = i + 6;
       this.arrTime.push(time);
-      this.arrCookies.push(Math.round(this.customerNum() * this.avg_cookies));
+      this.arrCookies.push(Math.round(this.customerNum() * this.avgCookies));
     }
     return this.arrCookies;
   },
-  totalCookies: function() {
+  totalCookies: function() { // calculates total number of cookies for the day
     var total = 0;
     for (var i = 0; i < this.arrCookies.length; i++) {
       total += this.arrCookies[i];
@@ -29,25 +29,25 @@ var firstAndPike = {
 };
 
 var seaTacAirport = {
-  min_customer: 3,
-  max_customer: 24,
-  avg_cookies: 1.2
+  minCustomer: 3,
+  maxCustomer: 24,
+  avgCookies: 1.2
 };
 
 var seattleCenter = {
-  min_customer: 11,
-  max_customer: 38,
-  avg_cookies: 3.7
+  minCustomer: 11,
+  maxCustomer: 38,
+  avgCookies: 3.7
 };
 
 var capitolHill = {
-  min_customer: 20,
-  max_customer: 38,
-  avg_cookies: 2.3
+  minCustomer: 20,
+  maxCustomer: 38,
+  avgCookies: 2.3
 };
 
 var alki = {
-  min_customer: 2,
-  max_customer: 16,
-  avg_cookies: 4.6
+  minCustomer: 2,
+  maxCustomer: 16,
+  avgCookies: 4.6
 };

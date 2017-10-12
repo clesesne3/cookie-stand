@@ -13,16 +13,16 @@ var firstAndPike = {
   },
   cookiesPerHour: function() { // calculates number of cookies purchased per hour
     for(var i = 0; i < 15; i++) {
-      var time = i + 6;
-      if (i + 6 > 12) { // adjusts time to 12-hr basis
+      var time = i + 6; // shifts iterating value to actual time value (24-hour format)3
+      if (i + 6 > 12) { // adjusts time to 12-hr format
         time = time - 12;
       }
-      this.arrTime.push(time);
-      this.arrCookies.push(Math.round(this.customerNum() * this.avgCookies));
+      this.arrTime.push(time); // creates array of store hours
+      this.arrCookies.push(Math.round(this.customerNum() * this.avgCookies)); // creates array of hourly cookie sales
     }
     return this.arrCookies;
   },
-  totalCookies: function() { // calculates total number of cookies for the day
+  totalCookies: function() { // calculates total number of cookies per day
     var total = 0;
     for (var i = 0; i < this.arrCookies.length; i++) {
       total += this.arrCookies[i];
@@ -30,20 +30,26 @@ var firstAndPike = {
     return total;
   },
   showData: function() { // generates list to display time and hourly cookie sales
+
+    // add DOM manipulation to dynamically create main header, location sub-headers, and unordered list elements
+
     for(var j = 0; j < 16; j++) {
-      var newList = document.getElementById('firstAndPike');
-      var newListEl = document.createElement('li');
+      var newList = document.getElementById('firstAndPike'); // navigate to 'ul' element in HTML
+      var newListEl = document.createElement('li'); // create 'li' element to add to 'ul'
+      // create text to insert into 'li' --> times and cookie sales for 6am to 11am
       if (j < 6) {
         var newListText = document.createTextNode(this.arrTime[j] + 'am: ' + this.arrCookies[j] + ' cookies');
       }
+      // create text to insert into 'li' --> times and cookie sales for 12pm to 8pm
       else if (j > 5 && j < 15) {
         var newListText = document.createTextNode(this.arrTime[j] + 'pm: ' + this.arrCookies[j] + ' cookies');
       }
+      // create text to insert into 'li' --> total number of cookies for day
       else if (j == 15){
         var newListText = document.createTextNode('Total: ' + this.totalCookies() + ' cookies');
       }
-      newListEl.appendChild(newListText);
-      newList.appendChild(newListEl);
+      newListEl.appendChild(newListText); // populate each list element with correct time & sales text
+      newList.appendChild(newListEl); // populate unordered list with list element
     }
   }
 };
@@ -96,6 +102,7 @@ var seaTacAirport = {
   }
 };
 
+// seattleCenter object
 var seattleCenter = {
   minCustomer: 11,
   maxCustomer: 38,
@@ -143,6 +150,7 @@ var seattleCenter = {
   }
 };
 
+// capitolHill object
 var capitolHill = {
   minCustomer: 20,
   maxCustomer: 38,
@@ -190,6 +198,7 @@ var capitolHill = {
   }
 };
 
+// alki object
 var alki = {
   minCustomer: 2,
   maxCustomer: 16,

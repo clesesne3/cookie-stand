@@ -7,6 +7,7 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  text-decoration: underline;
 }
 
 h3 {
@@ -14,6 +15,7 @@ h3 {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  text-decoration: underline;
 }
 
 ul {

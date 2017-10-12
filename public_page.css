@@ -2,6 +2,21 @@ body {
   background-color: Salmon;
 }
 
+h1 {
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 3em;
+}
+
+img {
+   display: block;
+   width: 50%;
+   height: 15%;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
 .highlights {
   font-family: 'Roboto';
   color: Yellow;

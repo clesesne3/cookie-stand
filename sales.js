@@ -14,6 +14,9 @@ var firstAndPike = {
   cookiesPerHour: function() { // calculates number of cookies purchased per hour
     for(var i = 0; i < 15; i++) {
       var time = i + 6;
+      if (i + 6 > 12) { // adjusts time to 12-hr basis
+        time = time - 12;
+      }
       this.arrTime.push(time);
       this.arrCookies.push(Math.round(this.customerNum() * this.avgCookies));
     }
@@ -25,6 +28,23 @@ var firstAndPike = {
       total += this.arrCookies[i];
     }
     return total;
+  },
+  createList: function() { // create list to display time and hourly cookie sales
+    for(var j = 0; j < 16; j++) {
+      var uListEl = document.getElementById('firstAndPike');
+      var newLi = document.createElement('li');
+      if (j < 6) {
+        var newLiText = document.createTextNode(this.arrTime[j] + 'am: ' + this.arrCookies[j] + ' cookies');
+      }
+      else if (j > 5 && j < 15) {
+        var newLiText = document.createTextNode(this.arrTime[j] + 'pm: ' + this.arrCookies[j] + ' cookies');
+      }
+      else if (j == 15){
+        var newLiText = document.createTextNode('Total: ' + this.totalCookies() + ' cookies');
+      }
+      newLi.appendChild(newLiText);
+      uListEl.appendChild(newLi);
+    }
   }
 };
 
@@ -51,3 +71,7 @@ var alki = {
   maxCustomer: 16,
   avgCookies: 4.6
 };
+
+// call functions
+firstAndPike.cookiesPerHour();
+firstAndPike.createList();

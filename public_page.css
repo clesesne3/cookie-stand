@@ -1,0 +1,18 @@
+body {
+  background-color: Salmon;
+}
+
+.highlights {
+  font-family: 'Roboto';
+  color: Yellow;
+}
+
+.data {
+  font-family: Verdana;
+  color: Green;
+}
+
+.text {
+  font-family: Times;
+  color: Black;
+}

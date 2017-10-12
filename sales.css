@@ -1,0 +1,28 @@
+body {
+  background-color: Salmon;
+}
+
+h1 {
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+h3 {
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+ul {
+  width: 10%;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+li {
+  text-align: left;
+}

@@ -66,24 +66,25 @@ function makeHeaderRow(inputArray) { // this should access array of time values
   tableEl.appendChild(trEl);
 }
 
-function makeTableRow (inputArray) { // this should access array of cookie sales per hour for each location
-  var trEl = document.createElement('tr');
-  var thEl = document.createElement('th');
-  thEl.textContent = allLocations[0].name;
-  trEl.appendChild(thEl);
-  for (var j = 0; j < inputArray.length; j++) {
-    var tdEl = document.createElement('td');
-    tdEl.textContent = inputArray[j];
-    trEl.appendChild(tdEl);
+function makeTableRow () {
+  for (var i = 0; i < allLocations.length; i++) {
+    var thEl = document.createElement('th');
+    var trEl = document.createElement('tr');
+    thEl.textContent = allLocations[i].name;
+    trEl.appendChild(thEl);
+    allLocations[i].cookiesPerHour();
+    allLocations[i].totalCookies();
+    for (var j = 0; j < allLocations[0].arrCookies.length; j++) {
+      var tdEl = document.createElement('td');
+      tdEl.textContent = allLocations[i].arrCookies[j];
+      trEl.appendChild(tdEl);
+    }
+    var tdTotalEl = document.createElement('td');
+    tdTotalEl.textContent = allLocations[i].cookiesTotal;
+    trEl.appendChild(tdTotalEl);
+    tableEl.appendChild(trEl);
   }
-  var tdTotalEl = document.createElement('td');
-  tdTotalEl.textContent = allLocations[0].totalCookies();
-  trEl.appendChild(tdTotalEl);
-  tableEl.appendChild(trEl);
 }
 
 makeHeaderRow(arrTime);
-
-for (var k = 0; k < allLocations.length; k++) {
-  makeTableRow(allLocations[k].cookiesPerHour());
-}
+makeTableRow();

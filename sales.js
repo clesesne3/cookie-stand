@@ -1,5 +1,7 @@
 'use strict';
 
+// this file includes object literals for each store location to generate and display data
+
 // firstAndPike object
 var firstAndPike = {
   name: '1st and Pike',

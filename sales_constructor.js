@@ -13,6 +13,7 @@ function CreateLocation (name, minCustomer, maxCustomer, avgCookies) {
   this.maxCustomer = maxCustomer;
   this.avgCookies = avgCookies;
   this.arrCookies = [];
+  this.arrTossers = [];
   this.cookiesTotal = 0;
   allLocations.push(this);
 
@@ -45,6 +46,29 @@ function CreateLocation (name, minCustomer, maxCustomer, avgCookies) {
     tdTotalEl.textContent = this.cookiesTotal;
     trEl.appendChild(tdTotalEl);
     tableEl.appendChild(trEl);
+  };
+  this.tossersPerHour = function() {// method to calculate tossers needed per hour for a location
+    for (var i = 0; i < this.arrCookies.length; i++) {
+      if (this.customerNum() / 20 >= 2) {
+        this.arrTossers.push(Math.ceil(this.customerNum() / 20));
+      }
+      else {
+        this.arrTossers.push(2);
+      }
+    }
+    return this.arrTossers;
+  };
+  this.makeTosserRow = function() {
+    var trEl = document.createElement('tr');
+    var thEl = document.createElement('th');
+    thEl.textContent = this.name;
+    trEl.appendChild(thEl);
+    for (var i = 0; i < this.arrCookies.length; i++) {
+      var tdEl = document.createElement('td');
+      tdEl.textContent = this.arrTossers[i];
+      trEl.appendChild(tdEl);
+    }
+    tableEl2.appendChild(trEl);
   };
 }
 
@@ -87,10 +111,10 @@ function makeAllRows() {
 }
 
 // **STRETCH GOAL** - calculate hourly total for all five locations
-function hourlyTotal (j) {
+function hourlyTotal (hour) {
   var total = 0;
   for (var i = 0; i < allLocations.length; i++) {
-    total += allLocations[i].arrCookies[j];
+    total += allLocations[i].arrCookies[hour];
   }
   return total;
 }
@@ -119,3 +143,31 @@ function makeFooterRow () {
 makeHeaderRow(arrTime);
 makeAllRows();
 makeFooterRow();
+
+// **STRETCH GOAL** -- create table displaying cookie tossers needed per hour per location
+var tableEl2 = document.getElementById('cookietosser');
+function makeAllTosserRows () {
+  for (var i = 0; i < allLocations.length; i++) {
+    allLocations[i].customerNum();
+    allLocations[i].tossersPerHour();
+    allLocations[i].makeTosserRow();}
+}
+
+function makeTosserHeader (arrTime) {
+  var trEl = document.createElement('tr');
+  for (var i = 0; i <= arrTime.length; i++) {
+    if (i === 0) {
+      var thEl = document.createElement('th');
+      thEl.textContent = '';
+      trEl.appendChild(thEl);
+    }
+    else {
+      var thEl = document.createElement('th');
+      thEl.textContent = arrTime[i - 1];
+      trEl.appendChild(thEl);
+    }
+  }
+  tableEl2.appendChild(trEl);
+}
+makeTosserHeader(arrTime);
+makeAllTosserRows();

@@ -15,7 +15,7 @@ var firstAndPike = {
     return avgCustomer;
   },
   cookiesPerHour: function() { // calculates number of cookies purchased per hour
-    for(var i = 0; i < 15; i++) {
+    for(var i = 0; i < 14; i++) {
       var time = i + 6; // shifts iterating value to actual time value (24-hour format)3
       if (i + 6 > 12) { // adjusts time to 12-hr format
         time = time - 12;
@@ -36,24 +36,25 @@ var firstAndPike = {
 
     // DOM manipulation to dynamically create location sub-headers and unordered list elements
     var h3El = document.createElement('h3');
+    h3El.className = 'text';
     h3El.textContent = this.name;
     var ulEl = document.createElement('ul');
     ulEl.id = 'firstAndPike';
     document.body.appendChild(h3El);
     document.body.appendChild(ulEl);
 
-    for(var j = 0; j < 16; j++) {
+    for(var j = 0; j < 15; j++) {
       var newListEl = document.createElement('li'); // create 'li' element to add to 'ul'
       // create text to insert into 'li' --> times and cookie sales for 6am to 11am
       if (j < 6) {
         var newListText = document.createTextNode(this.arrTime[j] + 'am: ' + this.arrCookies[j] + ' cookies');
       }
       // create text to insert into 'li' --> times and cookie sales for 12pm to 8pm
-      else if (j > 5 && j < 15) {
+      else if (j > 5 && j < 14) {
         var newListText = document.createTextNode(this.arrTime[j] + 'pm: ' + this.arrCookies[j] + ' cookies');
       }
       // create text to insert into 'li' --> total number of cookies for day
-      else if (j == 15){
+      else if (j === 14){
         var newListText = document.createTextNode('Total: ' + this.totalCookies() + ' cookies');
       }
       newListEl.appendChild(newListText); // populate each list element time & sales text
@@ -75,7 +76,7 @@ var seaTacAirport = {
     return avgCustomer;
   },
   cookiesPerHour: function() { // calculates number of cookies purchased per hour
-    for(var i = 0; i < 15; i++) {
+    for(var i = 0; i < 14; i++) {
       var time = i + 6;
       if (i + 6 > 12) { // adjusts time to 12-hr basis
         time = time - 12;
@@ -101,15 +102,15 @@ var seaTacAirport = {
     document.body.appendChild(h3El);
     document.body.appendChild(ulEl);
 
-    for(var j = 0; j < 16; j++) {
+    for(var j = 0; j < 15; j++) {
       var newListEl = document.createElement('li');
       if (j < 6) {
         var newListText = document.createTextNode(this.arrTime[j] + 'am: ' + this.arrCookies[j] + ' cookies');
       }
-      else if (j > 5 && j < 15) {
+      else if (j > 5 && j < 14) {
         var newListText = document.createTextNode(this.arrTime[j] + 'pm: ' + this.arrCookies[j] + ' cookies');
       }
-      else if (j == 15){
+      else if (j === 14){
         var newListText = document.createTextNode('Total: ' + this.totalCookies() + ' cookies');
       }
       newListEl.appendChild(newListText);
@@ -131,7 +132,7 @@ var seattleCenter = {
     return avgCustomer;
   },
   cookiesPerHour: function() { // calculates number of cookies purchased per hour
-    for(var i = 0; i < 15; i++) {
+    for(var i = 0; i < 14; i++) {
       var time = i + 6;
       if (i + 6 > 12) { // adjusts time to 12-hr basis
         time = time - 12;
@@ -157,15 +158,15 @@ var seattleCenter = {
     document.body.appendChild(h3El);
     document.body.appendChild(ulEl);
 
-    for(var j = 0; j < 16; j++) {
+    for(var j = 0; j < 15; j++) {
       var newListEl = document.createElement('li');
       if (j < 6) {
         var newListText = document.createTextNode(this.arrTime[j] + 'am: ' + this.arrCookies[j] + ' cookies');
       }
-      else if (j > 5 && j < 15) {
+      else if (j > 5 && j < 14) {
         var newListText = document.createTextNode(this.arrTime[j] + 'pm: ' + this.arrCookies[j] + ' cookies');
       }
-      else if (j == 15){
+      else if (j === 14){
         var newListText = document.createTextNode('Total: ' + this.totalCookies() + ' cookies');
       }
       newListEl.appendChild(newListText);
@@ -187,7 +188,7 @@ var capitolHill = {
     return avgCustomer;
   },
   cookiesPerHour: function() { // calculates number of cookies purchased per hour
-    for(var i = 0; i < 15; i++) {
+    for(var i = 0; i < 14; i++) {
       var time = i + 6;
       if (i + 6 > 12) { // adjusts time to 12-hr basis
         time = time - 12;
@@ -213,15 +214,15 @@ var capitolHill = {
     document.body.appendChild(h3El);
     document.body.appendChild(ulEl);
 
-    for(var j = 0; j < 16; j++) {
+    for(var j = 0; j < 15; j++) {
       var newListEl = document.createElement('li');
       if (j < 6) {
         var newListText = document.createTextNode(this.arrTime[j] + 'am: ' + this.arrCookies[j] + ' cookies');
       }
-      else if (j > 5 && j < 15) {
+      else if (j > 5 && j < 14) {
         var newListText = document.createTextNode(this.arrTime[j] + 'pm: ' + this.arrCookies[j] + ' cookies');
       }
-      else if (j == 15){
+      else if (j === 14){
         var newListText = document.createTextNode('Total: ' + this.totalCookies() + ' cookies');
       }
       newListEl.appendChild(newListText);
@@ -243,7 +244,7 @@ var alki = {
     return avgCustomer;
   },
   cookiesPerHour: function() { // calculates number of cookies purchased per hour
-    for(var i = 0; i < 15; i++) {
+    for(var i = 0; i < 14; i++) {
       var time = i + 6;
       if (i + 6 > 12) { // adjusts time to 12-hr basis
         time = time - 12;
@@ -269,15 +270,15 @@ var alki = {
     document.body.appendChild(h3El);
     document.body.appendChild(ulEl);
 
-    for(var j = 0; j < 16; j++) {
+    for(var j = 0; j < 15; j++) {
       var newListEl = document.createElement('li');
       if (j < 6) {
         var newListText = document.createTextNode(this.arrTime[j] + 'am: ' + this.arrCookies[j] + ' cookies');
       }
-      else if (j > 5 && j < 15) {
+      else if (j > 5 && j < 14) {
         var newListText = document.createTextNode(this.arrTime[j] + 'pm: ' + this.arrCookies[j] + ' cookies');
       }
-      else if (j == 15){
+      else if (j === 14){
         var newListText = document.createTextNode('Total: ' + this.totalCookies() + ' cookies');
       }
       newListEl.appendChild(newListText);

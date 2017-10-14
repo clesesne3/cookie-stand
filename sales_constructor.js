@@ -6,7 +6,7 @@ var arrTime = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm',
 var allLocations = [];
 var tableEl = document.getElementById('cookiestands'); // create table element
 
-// constructor function to build each location object
+// ***constructor function to build each location object
 function CreateLocation (name, minCustomer, maxCustomer, avgCookies) {
   this.name = name;
   this.minCustomer = minCustomer;

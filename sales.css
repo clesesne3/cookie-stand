@@ -70,6 +70,11 @@ td {
   font-size: 1.1em;
 }
 
+td:hover {
+  color: Black;
+  background-color: Gray;
+}
+
 .text {
   font-family: Georgia;
   color: #FFF;

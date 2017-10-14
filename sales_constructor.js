@@ -123,7 +123,7 @@ function hourlyTotal (hour) {
 function makeFooterRow () {
   var trEl = document.createElement('tr');
   var thEl = document.createElement('th');
-  thEl.textContent = 'TOTAL';
+  thEl.textContent = 'Total';
   trEl.appendChild(thEl);
   for (var i = 0; i < allLocations[0].arrCookies.length; i++) {
     var tdEl = document.createElement('td');

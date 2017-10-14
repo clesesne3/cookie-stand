@@ -10,7 +10,6 @@ h1 {
   width: 50%;
   position: sticky;
   top: 0;
-  /*margin-left: auto;*/
   margin-right: auto;
   text-align: center;
   text-decoration: underline;
@@ -47,12 +46,11 @@ li {
 table {
   border: 1px solid #FFF;
   table-layout: fixed;
-  width: 75%;
+  width: 77%;
 }
 
 th {
   border: 1px solid #FFF;
-  /*background-color: Navy;*/
   text-align: center;
   word-wrap: break-word;
   font-weight: bold;
@@ -62,12 +60,17 @@ th {
 
 td {
   border: 1px solid #FFF;
-  /*background-color: Navy;*/
   text-align: center;
   word-wrap: break-word;
   color: #FFF;
   font-weight: bold;
   font-size: 1.1em;
+  padding: 3px;
+}
+
+th:hover {
+  color: Black;
+  background-color: Gray;
 }
 
 td:hover {

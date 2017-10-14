@@ -31,4 +31,18 @@ li {
 
 table {
   border: 1px solid Black;
+  table-layout: fixed;
+  width: 100%;
+}
+
+th {
+  border: 1px solid Black;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+td {
+  border: 1px solid Black;
+  text-align: center;
+  word-wrap: break-word;
 }

@@ -1,0 +1,85 @@
+body {
+  background-color: BurlyWood;
+  background-image: url('img/seattle_pic.jpg');
+  background-repeat: no-repeat;
+  background-size: 1440px 800px;
+  background-attachment: fixed;
+}
+
+h1 {
+  width: 50%;
+  position: sticky;
+  top: 0;
+  margin-right: auto;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 2.5em;
+  color: #FFF;
+}
+
+h3 {
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 2em;
+  color: #FFF;
+}
+
+ul {
+  width: 15%;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px double #FFF;
+}
+
+li {
+  text-align: left;
+  font-family: Verdana; /*standard sans-serif font for data*/
+  font-weight: bold;
+  color: #FFF;
+  padding: 5px;
+}
+
+table {
+  border: 1px solid #FFF;
+  table-layout: fixed;
+  width: 77%;
+}
+
+th {
+  border: 1px solid #FFF;
+  text-align: center;
+  word-wrap: break-word;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #FFF;
+}
+
+td {
+  border: 1px solid #FFF;
+  text-align: center;
+  word-wrap: break-word;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 1.1em;
+  padding: 3px;
+}
+
+th:hover {
+  color: Black;
+  background-color: Gray;
+}
+
+td:hover {
+  color: Black;
+  background-color: Gray;
+}
+
+.text {
+  font-family: Georgia;
+  color: #FFF;
+  font-weight: bold;
+}

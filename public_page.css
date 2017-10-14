@@ -1,0 +1,136 @@
+body {
+  background-color: #FFF;
+}
+
+header {
+  width: auto;
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  padding: 20px;
+  text-align: center;
+  font-size: 5em;
+  font-family: 'Dancing Script';
+  background-color: Salmon;
+  color: #FFF;
+}
+
+#slogan {
+  width: 50%;
+  position: relative;
+  bottom: 110px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.7em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+img {
+   display: inline;
+   width: 15%;
+   height: 5%;
+   margin: auto;
+ }
+
+#left_pic {
+  float: left;
+}
+#right_pic {
+  float: right;
+}
+
+#photo_section {
+  margin: auto;
+  background-image: url('img/salmon_pastry.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 15%;
+}
+
+#location {
+  margin: auto;
+  background-color: BurlyWood;
+  padding: 2%;
+}
+
+#address {
+  font-size: 1.3em;
+}
+
+#visit {
+  font-size: 1.5em;;
+}
+
+h3 {
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 2em;
+  /*color: #FFF;*/
+  text-decoration: underline;
+  /*text-shadow: 1px 1px Black;*/
+}
+
+p {
+  width: auto;
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.2em;
+  color: Black;
+}
+
+.social_media {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#fb {
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+}
+#twitter {
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+}
+#instagram {
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+}
+
+footer {
+  background-color: Salmon;
+  width: auto;
+  margin: auto;
+  padding: 1.5%;
+  text-align: center;
+}
+
+footer p {
+  color: Black;
+}
+
+.highlights {
+  font-family: 'Roboto';
+  color: Aqua;
+  text-shadow: 1px 1px Black;
+  font-weight: bold;
+}
+
+.text {
+  font-family: Georgia serif; /* standard serif font for text*/
+  color: Black;
+}

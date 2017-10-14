@@ -6,34 +6,32 @@ var arrTime = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm',
 var allLocations = [];
 var tableEl = document.getElementById('cookiestands'); // create table element
 
-// ***constructor function to build each location object
+// ***CONSTRUCTOR FUNCTION to build each location object***
 function CreateLocation (name, minCustomer, maxCustomer, avgCookies) {
   this.name = name;
   this.minCustomer = minCustomer;
   this.maxCustomer = maxCustomer;
   this.avgCookies = avgCookies;
-  this.randCustomer = [];
   this.arrCookies = [];
-  this.hourlyTotals = [];
   this.cookiesTotal = 0;
   allLocations.push(this);
 
-  this.customerNum = function() {
+  this.customerNum = function() { // method to generate random number of customers
     return Math.floor(Math.random() * (this.maxCustomer - this.minCustomer + 1)) + this.minCustomer;
   };
-  this.cookiesPerHour = function() {
+  this.cookiesPerHour = function() { // method to calculate cookie sales per hour for respective location
     for(var i = 0; i < arrTime.length; i++) {
       this.arrCookies.push(Math.round(this.customerNum() * this.avgCookies));
     }
     return this.arrCookies;
   };
-  this.totalCookies = function() { // calculates daily cookie total for respective location
+  this.totalCookies = function() { // method to calculate daily cookie total for respective location
     for (var i = 0; i < this.arrCookies.length; i++) {
       this.cookiesTotal += this.arrCookies[i];
     }
     return this.cookiesTotal;
   };
-  this.makeTableRow = function() { // creates complete data row for respective location
+  this.makeTableRow = function() { // method to create complete data row (inherited by each location object)
     var trEl = document.createElement('tr');
     var thEl = document.createElement('th');
     thEl.textContent = this.name;
@@ -50,15 +48,14 @@ function CreateLocation (name, minCustomer, maxCustomer, avgCookies) {
   };
 }
 
-//function createAllStands() {
+//stores each location object as a variable
 var firstAndPike = new CreateLocation('1st and Pike', 23, 65, 6.3);
 var seaTacAirport = new CreateLocation('SeaTac Airport', 3, 24, 1.2);
 var seattleCenter = new CreateLocation('Seattle Center', 11, 38, 3.7);
 var capitolHill = new CreateLocation('Capitol Hill', 20, 38, 2.3);
 var alki = new CreateLocation('Alki', 2, 16, 4.6);
-//}
-//createAllStands();
 
+// function to create header row
 function makeHeaderRow(arrTime) {
   var trEl = document.createElement('tr');
   for (var i = 0; i <= arrTime.length; i++) {
@@ -74,11 +71,12 @@ function makeHeaderRow(arrTime) {
     }
   }
   var thTotalEl = document.createElement('th');
-  thTotalEl.textContent = 'Daily Location Total';
+  thTotalEl.textContent = 'Daily Total';
   trEl.appendChild(thTotalEl);
   tableEl.appendChild(trEl);
 }
 
+// function to generate all 5 location data rows using inherited methods
 function makeAllRows() {
   for (var i = 0; i < allLocations.length; i++) {
     allLocations[i].customerNum();
@@ -97,11 +95,11 @@ function hourlyTotal (j) {
   return total;
 }
 
-// display hourly totals for all locations
+// **STRETCH GOAL** - display hourly totals for all locations
 function makeFooterRow () {
   var trEl = document.createElement('tr');
   var thEl = document.createElement('th');
-  thEl.textContent = 'TOTALS';
+  thEl.textContent = 'TOTAL';
   trEl.appendChild(thEl);
   for (var i = 0; i < allLocations[0].arrCookies.length; i++) {
     var tdEl = document.createElement('td');

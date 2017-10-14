@@ -1,14 +1,21 @@
 body {
   background-color: BurlyWood;
+  background-image: url('img/seattle_pic.jpg');
+  background-repeat: no-repeat;
+  background-size: 1440px 800px;
+  background-attachment: fixed;
 }
 
 h1 {
-  width: 35%;
-  margin-left: auto;
+  width: 45%;
+  position: sticky;
+  top: 0;
+  /*margin-left: auto;*/
   margin-right: auto;
   text-align: center;
   text-decoration: underline;
   font-size: 2.5em;
+  color: #FFF;
 }
 
 h3 {
@@ -18,6 +25,7 @@ h3 {
   text-align: center;
   text-decoration: underline;
   font-size: 2em;
+  color: #FFF;
 }
 
 ul {
@@ -25,37 +33,45 @@ ul {
   margin-top: 2em;
   margin-left: auto;
   margin-right: auto;
-  border: 1px double Black;
+  border: 1px double #FFF;
 }
 
 li {
   text-align: left;
   font-family: Verdana; /*standard sans-serif font for data*/
   font-weight: bold;
-  color: Navy;
+  color: #FFF;
   padding: 5px;
 }
 
 table {
-  border: 1px solid Black;
+  border: 1px solid #FFF;
   table-layout: fixed;
-  width: 100%;
+  width: 75%;
 }
 
 th {
-  border: 1px solid Black;
+  border: 1px solid #FFF;
+  /*background-color: Navy;*/
   text-align: center;
   word-wrap: break-word;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #FFF;
 }
 
 td {
-  border: 1px solid Black;
+  border: 1px solid #FFF;
+  /*background-color: Navy;*/
   text-align: center;
   word-wrap: break-word;
-  color: Navy;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
 .text {
   font-family: Georgia;
-  color: Black;
+  color: #FFF;
+  font-weight: bold;
 }

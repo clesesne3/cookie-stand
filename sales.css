@@ -71,11 +71,13 @@ td {
 th:hover {
   color: Black;
   background-color: Gray;
+  cursor: crosshair;
 }
 
 td:hover {
   color: Black;
   background-color: Gray;
+  cursor: crosshair;
 }
 
 .text {
@@ -118,6 +120,9 @@ input {
 }
 
 #submit {
+  width: 20%;
+  height: 20%;
+  padding: 2%;
   background-color: Blue;
   color: #FFF;
   border: 1px solid Black;

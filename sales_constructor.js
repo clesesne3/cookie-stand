@@ -122,6 +122,7 @@ function hourlyTotal (hour) {
 // **STRETCH GOAL** - display hourly totals for all locations
 function makeFooterRow () {
   var trEl = document.createElement('tr');
+  trEl.id = 'footer';
   var thEl = document.createElement('th');
   thEl.textContent = 'Total';
   trEl.appendChild(thEl);
@@ -183,6 +184,7 @@ function submitFormData(event) {
   console.log(event);
   event.preventDefault(); // prevent page reload
 
+  // these variables store values from user input on form
   var storeName = event.target.name.value;
   console.log(storeName);
   var minCust = parseInt(event.target.minCustomer.value);
@@ -192,19 +194,30 @@ function submitFormData(event) {
   var averageCookies = parseInt(event.target.avgCookies.value);
   console.log(averageCookies);
 
+  // create new store location object from constructor
   var newStore = new CreateLocation(storeName, minCust, maxCust, averageCookies);
   console.log(newStore);
 
+  // clear form entrie values
   event.target.name.value = null;
   event.target.minCustomer.value = null;
   event.target.maxCustomer.value = null;
   event.target.avgCookies.value = null;
 
+  // run methods to create new data row
   allLocations[allLocations.length - 1].customerNum();
   allLocations[allLocations.length - 1].cookiesPerHour();
   allLocations[allLocations.length - 1].totalCookies();
   allLocations[allLocations.length - 1].makeTableRow();
-  makeFooterRow(); // how to make footer row refresh and appear at bottom of table each time
+
+  // checks to see of footer total row is present to delete and refresh when new location created
+  var footerPresent = document.getElementById('footer');
+  console.log(footerPresent);
+  if (footerPresent) {
+    document.getElementById('cookiestands').deleteRow(allLocations.length);
+  }
+  makeFooterRow();
 }
 
+// call function with 'submit' event listener
 elForm.addEventListener('submit', submitFormData);

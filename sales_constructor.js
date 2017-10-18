@@ -171,3 +171,18 @@ function makeTosserHeader (arrTime) {
 }
 makeTosserHeader(arrTime);
 makeAllTosserRows();
+
+// This section will take input data from submitted form and add data rows for new store locations
+var elForm = document.getElementById('storeForm');
+var storeName = document.getElementById('location');
+var minCust = document.getElementById('minimum');
+var maxCust = document.getElementById('maximum');
+var averageCookies = document.getElementById('average');
+
+// this function should take the form input data and pass it into the constructor function in sales_constructor.js
+function submitFormData(event) {
+  event.preventDefault();
+
+}
+
+elForm.addEventListener('submit', submitFormData);

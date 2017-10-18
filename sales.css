@@ -8,8 +8,8 @@ body {
 
 h1 {
   width: 50%;
-  position: sticky;
-  top: 0;
+  /*position: sticky;
+  top: 0;*/
   margin-right: auto;
   text-align: center;
   text-decoration: underline;
@@ -82,4 +82,45 @@ td:hover {
   font-family: Georgia;
   color: #FFF;
   font-weight: bold;
+}
+fieldset{
+width: 50%;
+}
+
+legend {
+  border: 1px solid Black;
+  border-radius: 5px;
+  font-style: italic;
+  font-weight: bold;
+  background-color: LightGrey;
+}
+
+label {
+  font-weight: bold;
+  color: #FFF;
+}
+
+input {
+  margin: 1.5em;
+}
+
+#location {
+
+}
+#minimum {
+
+}
+#maximum {
+
+}
+#average{
+
+}
+
+#submit {
+  background-color: Blue;
+  color: #FFF;
+  border: 1px solid Black;
+  border-radius: 5px;
+  margin-left: 0;
 }

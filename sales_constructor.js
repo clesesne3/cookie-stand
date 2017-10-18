@@ -142,10 +142,10 @@ function makeFooterRow () {
 
 makeHeaderRow(arrTime);
 makeAllRows();
-makeFooterRow();
+//makeFooterRow();
 
 // **STRETCH GOAL** -- create table displaying cookie tossers needed per hour per location
-var tableEl2 = document.getElementById('cookietosser');
+/*var tableEl2 = document.getElementById('cookietosser');
 function makeAllTosserRows () {
   for (var i = 0; i < allLocations.length; i++) {
     allLocations[i].customerNum();
@@ -170,19 +170,41 @@ function makeTosserHeader (arrTime) {
   tableEl2.appendChild(trEl);
 }
 makeTosserHeader(arrTime);
-makeAllTosserRows();
+makeAllTosserRows();*/
 
-// This section will take input data from submitted form and add data rows for new store locations
+//------------------------------------------------------------------------------
+// This section will take input data from submitted form and add data row for new store location
+
+// create variables to store form elements
 var elForm = document.getElementById('storeForm');
-var storeName = document.getElementById('location');
-var minCust = document.getElementById('minimum');
-var maxCust = document.getElementById('maximum');
-var averageCookies = document.getElementById('average');
 
-// this function should take the form input data and pass it into the constructor function in sales_constructor.js
+// this function takes the form input data and passes it into the constructor function
 function submitFormData(event) {
-  event.preventDefault();
+  console.log(event);
+  event.preventDefault(); // prevent page reload
 
+  var storeName = event.target.name.value;
+  console.log(storeName);
+  var minCust = parseInt(event.target.minCustomer.value);
+  console.log(minCust);
+  var maxCust = parseInt(event.target.maxCustomer.value);
+  console.log(maxCust);
+  var averageCookies = parseInt(event.target.avgCookies.value);
+  console.log(averageCookies);
+
+  var newStore = new CreateLocation(storeName, minCust, maxCust, averageCookies);
+  console.log(newStore);
+
+  event.target.name.value = null;
+  event.target.minCustomer.value = null;
+  event.target.maxCustomer.value = null;
+  event.target.avgCookies.value = null;
+
+  allLocations[allLocations.length - 1].customerNum();
+  allLocations[allLocations.length - 1].cookiesPerHour();
+  allLocations[allLocations.length - 1].totalCookies();
+  allLocations[allLocations.length - 1].makeTableRow();
+  makeFooterRow(); // how to make footer row refresh and appear at bottom of table each time
 }
 
 elForm.addEventListener('submit', submitFormData);

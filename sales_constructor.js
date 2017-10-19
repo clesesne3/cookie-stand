@@ -179,45 +179,49 @@ makeAllTosserRows();*/
 // create variables to store form elements
 var elForm = document.getElementById('storeForm');
 
-// this function takes the form input data and passes it into the constructor function
+// converts first letter of each word in a string to uppercase
+function firstLetterCapital (word) {
+  var wordArray = word.split(' ');
+  var newWordArray = [];
+  for (var i = 0; i < wordArray.length; i++) {
+    newWordArray.push(wordArray[i].charAt(0).toUpperCase() + wordArray[i].slice(1));
+  }
+  return newWordArray.join(' ');
+}
+
+// this function takes form input data and passes it into the constructor function
 function submitFormData(event) {
   console.log(event);
-  event.preventDefault(); // prevent page reload
+  event.preventDefault(); // to prevent page reload
 
-  // these variables store values from user input on form
-  var storeName = event.target.name.value;
-  console.log(storeName);
+  // store values from user input on form; *use parseInt to convert numeric inputs to integers
+  var storeName = firstLetterCapital(event.target.name.value); // capitalize store name
   var minCust = parseInt(event.target.minCustomer.value);
-  console.log(minCust);
   var maxCust = parseInt(event.target.maxCustomer.value);
-  console.log(maxCust);
   var averageCookies = parseInt(event.target.avgCookies.value);
-  console.log(averageCookies);
 
   // create new store location object from constructor
   var newStore = new CreateLocation(storeName, minCust, maxCust, averageCookies);
-  console.log(newStore);
 
-  // clear form entrie values
+  // clear form entry values
   event.target.name.value = null;
   event.target.minCustomer.value = null;
   event.target.maxCustomer.value = null;
   event.target.avgCookies.value = null;
 
-  // run methods to create new data row
+  // methods to create new data row
   allLocations[allLocations.length - 1].customerNum();
   allLocations[allLocations.length - 1].cookiesPerHour();
   allLocations[allLocations.length - 1].totalCookies();
   allLocations[allLocations.length - 1].makeTableRow();
 
-  // checks to see of footer total row is present to delete and refresh when new location created
+  // checks to see if footer (hourly total) row is present; deletes and refreshes when new location created
   var footerPresent = document.getElementById('footer');
-  console.log(footerPresent);
   if (footerPresent) {
     document.getElementById('cookiestands').deleteRow(allLocations.length);
   }
   makeFooterRow();
 }
 
-// call function with 'submit' event listener
+// event listener 'submit' fired to execute submitFormData function
 elForm.addEventListener('submit', submitFormData);

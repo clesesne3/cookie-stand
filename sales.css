@@ -86,7 +86,8 @@ td:hover {
   font-weight: bold;
 }
 fieldset{
-width: 50%;
+  margin-top: 1em;
+  width: 50%;
 }
 
 legend {
@@ -95,11 +96,14 @@ legend {
   font-style: italic;
   font-weight: bold;
   background-color: LightGrey;
+  font-size: 1em;
+  padding: 1.2%;
 }
 
 label {
   font-weight: bold;
   color: #FFF;
+  font-size: 1.1em;
 }
 
 input {
@@ -122,10 +126,12 @@ input {
 #submit {
   width: 20%;
   height: 20%;
-  padding: 2%;
+  padding: 1.2%;
   background-color: Blue;
   color: #FFF;
   border: 1px solid Black;
   border-radius: 5px;
   margin-left: 0;
+  font-weight: bold;
+  font-size: 0.8em;
 }

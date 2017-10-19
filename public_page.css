@@ -18,6 +18,37 @@ header {
   color: #FFF;
 }
 
+.nav-bar {
+  display: inline-flex;
+  margin: 0 auto;
+  color: Aqua;
+  font-size: 0.3em;
+  font-family: 'Roboto';
+  font-weight: bold;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: Aqua;
+  width: auto;
+  height: auto;
+  margin: 0 1em;
+}
+
+li {
+  border: 1px solid #FFF;
+  padding: 10px;
+  text-align: center;
+}
+
+.link {
+  display: block;
+  height: 242px;
+  margin-top: -242px;
+  visibility: hidden;
+}
+
 #slogan {
   width: 50%;
   position: relative;

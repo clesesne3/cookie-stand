@@ -95,6 +95,7 @@ function makeHeaderRow(arrTime) {
     }
   }
   var thTotalEl = document.createElement('th');
+  thTotalEl.id = 'header-corner';
   thTotalEl.textContent = 'Daily Total';
   trEl.appendChild(thTotalEl);
   tableEl.appendChild(trEl);
@@ -124,7 +125,8 @@ function makeFooterRow () {
   var trEl = document.createElement('tr');
   trEl.id = 'footer';
   var thEl = document.createElement('th');
-  thEl.textContent = 'Total';
+  thEl.id = 'footer-header';
+  thEl.textContent = 'Hourly Total';
   trEl.appendChild(thEl);
   for (var i = 0; i < allLocations[0].arrCookies.length; i++) {
     var tdEl = document.createElement('td');
@@ -143,9 +145,9 @@ function makeFooterRow () {
 
 makeHeaderRow(arrTime);
 makeAllRows();
-//makeFooterRow();
+makeFooterRow();
 
-// **STRETCH GOAL** -- create table displaying cookie tossers needed per hour per location
+// **STRETCH GOAL** -- create table for cookie tossers needed per hour per location
 /*var tableEl2 = document.getElementById('cookietosser');
 function makeAllTosserRows () {
   for (var i = 0; i < allLocations.length; i++) {
@@ -173,8 +175,8 @@ function makeTosserHeader (arrTime) {
 makeTosserHeader(arrTime);
 makeAllTosserRows();*/
 
-//------------------------------------------------------------------------------
-// This section will take input data from submitted form and add data row for new store location
+/*------------------------------------------------------------------------------
+This section takes input from submitted form and adds data row for a new store*/
 
 // create variables to store form elements
 var elForm = document.getElementById('storeForm');
@@ -192,7 +194,7 @@ function firstLetterCapital (word) {
 // this function takes form input data and passes it into the constructor function
 function submitFormData(event) {
   console.log(event);
-  event.preventDefault(); // to prevent page reload
+  event.preventDefault(); // prevents page reload
 
   // store values from user input on form; *use parseInt to convert numeric inputs to integers
   var storeName = firstLetterCapital(event.target.name.value); // capitalize store name
@@ -215,7 +217,7 @@ function submitFormData(event) {
   allLocations[allLocations.length - 1].totalCookies();
   allLocations[allLocations.length - 1].makeTableRow();
 
-  // checks to see if footer (hourly total) row is present; deletes and refreshes when new location created
+  // checks for footer (hourly total) row; deletes & refreshes after new store created
   var footerPresent = document.getElementById('footer');
   if (footerPresent) {
     document.getElementById('cookiestands').deleteRow(allLocations.length);

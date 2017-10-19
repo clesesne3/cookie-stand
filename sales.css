@@ -7,14 +7,15 @@ body {
 }
 
 h1 {
-  width: 50%;
+  width: 45%;
   /*position: sticky;
   top: 0;*/
   margin-right: auto;
-  text-align: center;
+  text-align: left;
   text-decoration: underline;
   font-size: 2.5em;
   color: #FFF;
+  text-shadow: 2px 2px Black;
 }
 
 h3 {
@@ -45,6 +46,7 @@ li {
 
 table {
   border: 1px solid #FFF;
+  border-radius: 3px;
   table-layout: fixed;
   width: 77%;
 }
@@ -56,6 +58,7 @@ th {
   font-weight: bold;
   font-size: 1.1em;
   color: #FFF;
+  text-shadow: 1px 1px Black;
 }
 
 td {
@@ -66,18 +69,23 @@ td {
   font-weight: bold;
   font-size: 1.1em;
   padding: 3px;
+  text-shadow: 1px 1px Black;
+}
+
+#footer-header, #header-corner {
+  font-style: italic;
 }
 
 th:hover {
   color: Black;
   background-color: Gray;
-  cursor: crosshair;
+  cursor: default;
 }
 
 td:hover {
   color: Black;
   background-color: Gray;
-  cursor: crosshair;
+  cursor: default;
 }
 
 .text {
@@ -85,9 +93,11 @@ td:hover {
   color: #FFF;
   font-weight: bold;
 }
+
 fieldset{
   margin-top: 1em;
   width: 50%;
+  border: 2px solid #FFF;
 }
 
 legend {
@@ -108,19 +118,24 @@ label {
 
 input {
   margin: 1.5em;
+  border: 1px solid Black;
 }
 
 #location {
-
+  box-shadow: inset 1px 1px Grey;
+  padding: 0.5%;
 }
 #minimum {
-
+  box-shadow: inset 1px 1px Grey;
+  padding: 0.5%;
 }
 #maximum {
-
+  box-shadow: inset 1px 1px Grey;
+  padding: 0.5%;
 }
 #average{
-
+  box-shadow: inset 1px 1px Grey;
+  padding: 0.5%;
 }
 
 #submit {
@@ -133,5 +148,14 @@ input {
   border-radius: 5px;
   margin-left: 0;
   font-weight: bold;
-  font-size: 0.8em;
+  font-size: 0.9em;
+  text-shadow: 1px 1px Black;
+  box-shadow: 1px 1px 4px LightGrey, inset 2px 2px 2px LightGrey;
+  cursor: pointer;
+}
+#submit:hover {
+  -webkit-transform: scale(1.1);
+}
+#submit:active {
+  -webkit-transform: translate3D(3px, 3px, 6px);
 }

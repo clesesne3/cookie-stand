@@ -1,0 +1,102 @@
+body {
+  background-color: #FFF;
+}
+
+header {
+  width: auto;
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  padding: 20px;
+  text-align: center;
+  font-size: 5em;
+  font-family: 'Dancing Script';
+  background-color: Salmon;
+  color: #FFF;
+}
+a{
+  text-decoration: none;
+  color: #FFF;
+}
+#left_pic {
+  float: left;
+}
+#right_pic {
+  float: right;
+}
+
+div {
+  display: inline;
+  margin-left: 1em;
+  margin-right: 1em;
+  text-align: center;
+}
+figure {
+  display: inline-block;
+  text-align: center;
+  width: 15%;
+}
+img {
+   display: inline;
+   width: 15%;
+   height: 5%;
+   margin: auto;
+ }
+figcaption {
+  display: inline;
+  font-size: 1em;
+  font-style: ;
+  font-weight: bold;
+  text-align: center;
+}
+
+.pic {
+  width: 176px;
+  height: 176px;
+  border: 2px solid Aqua;
+}
+
+
+#merch {
+  margin: auto;
+  background-color: BurlyWood;
+  padding: 2% 0 2% 0;
+  text-align: center;
+}
+
+p {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.2em;
+  color: Black;
+}
+
+#home-fish {
+  margin-top: 50%;
+  margin-bottom: 0;
+  width: 110px;
+  height: 50px;
+  box-shadow: 1px 1px 4px Black;
+}
+#home-fish:active {
+  -webkit-transform: translate3D(3px, 3px, 6px);
+}
+
+footer {
+  background-color: Salmon;
+  width: auto;
+  margin: auto;
+  padding: 1.5%;
+  text-align: center;
+}
+
+.text {
+  font-family: Georgia serif; /* standard serif font for text*/
+  color: Black;
+}

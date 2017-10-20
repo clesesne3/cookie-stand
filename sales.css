@@ -121,19 +121,7 @@ input {
   border: 1px solid Black;
 }
 
-#location {
-  box-shadow: inset 1px 1px Grey;
-  padding: 0.5%;
-}
-#minimum {
-  box-shadow: inset 1px 1px Grey;
-  padding: 0.5%;
-}
-#maximum {
-  box-shadow: inset 1px 1px Grey;
-  padding: 0.5%;
-}
-#average{
+#location, #minimum, #maximum, #average {
   box-shadow: inset 1px 1px Grey;
   padding: 0.5%;
 }

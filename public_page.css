@@ -104,19 +104,26 @@ h3 {
   margin-right: auto;
   text-align: center;
   font-size: 2em;
-  /*color: #FFF;*/
-  text-decoration: underline;
-  /*text-shadow: 1px 1px Black;*/
+  /*text-decoration: underline;*/
 }
 
 p {
-  width: auto;
+  width: 50%;
   margin: auto;
   text-align: center;
   font-weight: bold;
   font-style: italic;
   font-size: 1.2em;
   color: Black;
+}
+
+#family {
+  margin: 0 auto;
+  text-align: center;
+}
+#family img {
+  width: 216px;
+  height: 170px
 }
 
 .social_media {
@@ -148,10 +155,6 @@ footer {
   margin: auto;
   padding: 1.5%;
   text-align: center;
-}
-
-footer p {
-  color: Black;
 }
 
 .highlights {

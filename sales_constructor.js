@@ -120,7 +120,7 @@ function hourlyTotal (hour) {
   return total;
 }
 
-// **STRETCH GOAL** - display hourly totals for all locations
+// **STRETCH GOAL** - display hourly totals from all locations
 function makeFooterRow () {
   var trEl = document.createElement('tr');
   trEl.id = 'footer';
@@ -178,10 +178,10 @@ makeAllTosserRows();*/
 /*------------------------------------------------------------------------------
 This section takes input from submitted form and adds data row for a new store*/
 
-// create variables to store form elements
+// create variable to store form element
 var elForm = document.getElementById('storeForm');
 
-// converts first letter of each word in a string to uppercase
+// convert first letter of each word in a string to uppercase
 function firstLetterCapital (word) {
   var wordArray = word.split(' ');
   var newWordArray = [];
@@ -191,21 +191,21 @@ function firstLetterCapital (word) {
   return newWordArray.join(' ');
 }
 
-// this function takes form input data and passes it into the constructor function
+// takes form input data and passes it into constructor function
 function submitFormData(event) {
   console.log(event);
   event.preventDefault(); // prevents page reload
 
-  // store values from user input on form; *use parseInt to convert numeric inputs to integers
+  // store values from user input; *use parseInt to convert numeric inputs to integers*
   var storeName = firstLetterCapital(event.target.name.value); // capitalize store name
   var minCust = parseInt(event.target.minCustomer.value);
   var maxCust = parseInt(event.target.maxCustomer.value);
   var averageCookies = parseInt(event.target.avgCookies.value);
 
-  // create new store location object from constructor
+  // create new store location object
   var newStore = new CreateLocation(storeName, minCust, maxCust, averageCookies);
 
-  // clear form entry values
+  // clear all form entry values
   event.target.name.value = null;
   event.target.minCustomer.value = null;
   event.target.maxCustomer.value = null;
@@ -217,7 +217,7 @@ function submitFormData(event) {
   allLocations[allLocations.length - 1].totalCookies();
   allLocations[allLocations.length - 1].makeTableRow();
 
-  // checks for footer (hourly total) row; deletes & refreshes after new store created
+  // checks for footer (hourly total) row; deletes & refreshes after each new store created
   var footerPresent = document.getElementById('footer');
   if (footerPresent) {
     document.getElementById('cookiestands').deleteRow(allLocations.length);
@@ -225,5 +225,5 @@ function submitFormData(event) {
   makeFooterRow();
 }
 
-// event listener 'submit' fired to execute submitFormData function
+// 'submit' event fired to execute submitFormData function
 elForm.addEventListener('submit', submitFormData);

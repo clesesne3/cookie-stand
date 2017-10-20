@@ -84,7 +84,33 @@ img {
   padding: 15%;
 }
 
-#location {
+/*#location {
+  margin: auto;
+  background-color: #FFF;
+  padding: 2%;
+}*/
+#about_div {
+  margin: auto;
+  background-color: #FFF;
+  padding: 3%;
+  text-align: center;
+}
+#location_div {
+  margin: auto;
+  background-color: BurlyWood;
+  padding: 4%;
+  text-align: center;
+}
+#hours_div {
+  margin: auto;
+  background-color: #FFF;
+  padding: 4%;
+}
+#hours_div img {
+  margin-right: 7em;
+  margin-left: 7em;
+}
+#contact_div {
   margin: auto;
   background-color: BurlyWood;
   padding: 2%;
@@ -92,10 +118,12 @@ img {
 
 #address {
   font-size: 1.3em;
+  font-weight: bold;
 }
 
 #visit {
-  font-size: 1.5em;;
+  font-size: 1.5em;
+  font-style: italic;
 }
 
 h3 {
@@ -111,8 +139,8 @@ p {
   width: 50%;
   margin: auto;
   text-align: center;
-  font-weight: bold;
-  font-style: italic;
+  font-weight: normal;
+  font-style: normal;
   font-size: 1.2em;
   color: Black;
 }
@@ -122,15 +150,15 @@ p {
   text-align: center;
 }
 #family img {
-  width: 216px;
-  height: 170px
+  width: 296px;
+  height: 210px
 }
 
 .social_media {
-  margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  background-color: BurlyWood;
 }
 
 #fb {
@@ -155,6 +183,10 @@ footer {
   margin: auto;
   padding: 1.5%;
   text-align: center;
+}
+footer p {
+  font-style: italic;
+  font-weight: bold;
 }
 
 .highlights {

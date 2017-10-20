@@ -147,3 +147,21 @@ input {
 #submit:active {
   -webkit-transform: translate3D(3px, 3px, 6px);
 }
+button {
+  margin-right: 3em;
+  text-align: center;
+  float: right;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px LightGrey, inset 2px 2px 2px LightGrey;
+  background-color: Navy;
+  color: #FFF;
+  position: relative;
+  bottom: 3em;
+  font-size: 0.9em;
+}
+button:hover {
+  cursor: pointer;
+}
+button:active {
+  -webkit-transform: translate3D(3px, 3px, 6px);
+}

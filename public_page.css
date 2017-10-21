@@ -84,15 +84,10 @@ img {
   padding: 15%;
 }
 
-/*#location {
-  margin: auto;
-  background-color: #FFF;
-  padding: 2%;
-}*/
 #about_div {
   margin: auto;
   background-color: #FFF;
-  padding: 3%;
+  padding-bottom: 4%;
   text-align: center;
 }
 #location_div {
@@ -104,11 +99,11 @@ img {
 #hours_div {
   margin: auto;
   background-color: #FFF;
-  padding: 4%;
+  padding: 2% 0 2% 0;
 }
 #hours_div img {
-  margin-right: 7em;
-  margin-left: 7em;
+  margin: 3% auto;
+  display: block;
 }
 #contact_div {
   margin: auto;
@@ -132,7 +127,6 @@ h3 {
   margin-right: auto;
   text-align: center;
   font-size: 2em;
-  /*text-decoration: underline;*/
 }
 
 p {
@@ -155,26 +149,15 @@ p {
 }
 
 .social_media {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   text-align: center;
   background-color: BurlyWood;
 }
 
-#fb {
-  margin: 5px;
-  width: 50px;
-  height: 50px;
-}
-#twitter {
-  margin: 5px;
-  width: 50px;
-  height: 50px;
-}
-#instagram {
-  margin: 5px;
-  width: 50px;
-  height: 50px;
+#fb, #twitter, #instagram {
+  margin: 0 0.5em;
+  width: 40px;
+  height: 40px;
 }
 
 footer {

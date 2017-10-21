@@ -19,7 +19,7 @@ header {
 }
 a{
   text-decoration: none;
-  color: #FFF;
+  color: Black;
 }
 #left_pic {
   float: left;
@@ -47,8 +47,7 @@ img {
  }
 figcaption {
   display: inline;
-  font-size: 1em;
-  font-style: ;
+  font-size: 1.1em;
   font-weight: bold;
   text-align: center;
 }

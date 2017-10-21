@@ -191,7 +191,7 @@ function firstLetterCapital (word) {
   return newWordArray.join(' ');
 }
 
-// takes form input data and passes it into constructor function
+// take form input data and pass it into constructor function
 function submitFormData(event) {
   console.log(event);
   event.preventDefault(); // prevents page reload
@@ -211,13 +211,13 @@ function submitFormData(event) {
   event.target.maxCustomer.value = null;
   event.target.avgCookies.value = null;
 
-  // methods to create new data row
+  // call methods to create new data row
   allLocations[allLocations.length - 1].customerNum();
   allLocations[allLocations.length - 1].cookiesPerHour();
   allLocations[allLocations.length - 1].totalCookies();
   allLocations[allLocations.length - 1].makeTableRow();
 
-  // checks for footer (hourly total) row; deletes & refreshes after each new store created
+  // check for footer (hourly total) row; deletes & refreshes after new store created
   var footerPresent = document.getElementById('footer');
   if (footerPresent) {
     document.getElementById('cookiestands').deleteRow(allLocations.length);

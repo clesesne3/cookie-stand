@@ -147,6 +147,7 @@ input {
 #submit:active {
   -webkit-transform: translate3D(3px, 3px, 6px);
 }
+
 button {
   margin-right: 3em;
   text-align: center;

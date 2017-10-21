@@ -17,6 +17,10 @@ header {
   background-color: Salmon;
   color: #FFF;
 }
+#header_link {
+  text-decoration: none;
+  color: #FFF;
+}
 
 .nav-bar {
   display: inline-flex;
@@ -76,7 +80,7 @@ img {
   float: right;
 }
 
-#photo_section {
+#photo_div {
   margin: auto;
   background-image: url('img/salmon_pastry.png');
   background-repeat: no-repeat;
@@ -93,7 +97,7 @@ img {
 #location_div {
   margin: auto;
   background-color: BurlyWood;
-  padding: 4%;
+  padding: 3%;
   text-align: center;
 }
 #hours_div {
@@ -144,8 +148,8 @@ p {
   text-align: center;
 }
 #family img {
-  width: 296px;
-  height: 210px
+  width: 336px;
+  height: 230px
 }
 
 .social_media {
@@ -182,4 +186,8 @@ footer p {
 .text {
   font-family: Georgia serif; /* standard serif font for text*/
   color: Black;
+}
+
+#address p {
+  margin: 2%;
 }

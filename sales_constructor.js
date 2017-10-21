@@ -95,6 +95,7 @@ function makeHeaderRow(arrTime) {
     }
   }
   var thTotalEl = document.createElement('th');
+  thTotalEl.id = 'header-corner';
   thTotalEl.textContent = 'Daily Total';
   trEl.appendChild(thTotalEl);
   tableEl.appendChild(trEl);
@@ -119,11 +120,13 @@ function hourlyTotal (hour) {
   return total;
 }
 
-// **STRETCH GOAL** - display hourly totals for all locations
+// **STRETCH GOAL** - display hourly totals from all locations
 function makeFooterRow () {
   var trEl = document.createElement('tr');
+  trEl.id = 'footer';
   var thEl = document.createElement('th');
-  thEl.textContent = 'Total';
+  thEl.id = 'footer-header';
+  thEl.textContent = 'Hourly Total';
   trEl.appendChild(thEl);
   for (var i = 0; i < allLocations[0].arrCookies.length; i++) {
     var tdEl = document.createElement('td');
@@ -144,8 +147,8 @@ makeHeaderRow(arrTime);
 makeAllRows();
 makeFooterRow();
 
-// **STRETCH GOAL** -- create table displaying cookie tossers needed per hour per location
-var tableEl2 = document.getElementById('cookietosser');
+// **STRETCH GOAL** -- create table for cookie tossers needed per hour per location
+/*var tableEl2 = document.getElementById('cookietosser');
 function makeAllTosserRows () {
   for (var i = 0; i < allLocations.length; i++) {
     allLocations[i].customerNum();
@@ -170,4 +173,57 @@ function makeTosserHeader (arrTime) {
   tableEl2.appendChild(trEl);
 }
 makeTosserHeader(arrTime);
-makeAllTosserRows();
+makeAllTosserRows();*/
+
+/*------------------------------------------------------------------------------
+This section takes input from submitted form and adds data row for a new store*/
+
+// create variable to store form element
+var elForm = document.getElementById('storeForm');
+
+// convert first letter of each word in a string to uppercase
+function firstLetterCapital (word) {
+  var wordArray = word.split(' ');
+  var newWordArray = [];
+  for (var i = 0; i < wordArray.length; i++) {
+    newWordArray.push(wordArray[i].charAt(0).toUpperCase() + wordArray[i].slice(1));
+  }
+  return newWordArray.join(' ');
+}
+
+// take form input data and pass it into constructor function
+function submitFormData(event) {
+  console.log(event);
+  event.preventDefault(); // prevents page reload
+
+  // store values from user input; *use parseInt to convert numeric inputs to integers*
+  var storeName = firstLetterCapital(event.target.name.value); // capitalize store name
+  var minCust = parseInt(event.target.minCustomer.value);
+  var maxCust = parseInt(event.target.maxCustomer.value);
+  var averageCookies = parseInt(event.target.avgCookies.value);
+
+  // create new store location object
+  var newStore = new CreateLocation(storeName, minCust, maxCust, averageCookies);
+
+  // clear all form entry values
+  event.target.name.value = null;
+  event.target.minCustomer.value = null;
+  event.target.maxCustomer.value = null;
+  event.target.avgCookies.value = null;
+
+  // call methods to create new data row
+  allLocations[allLocations.length - 1].customerNum();
+  allLocations[allLocations.length - 1].cookiesPerHour();
+  allLocations[allLocations.length - 1].totalCookies();
+  allLocations[allLocations.length - 1].makeTableRow();
+
+  // check for footer (hourly total) row; deletes & refreshes after new store created
+  var footerPresent = document.getElementById('footer');
+  if (footerPresent) {
+    document.getElementById('cookiestands').deleteRow(allLocations.length);
+  }
+  makeFooterRow();
+}
+
+// 'submit' event fired to execute submitFormData function
+elForm.addEventListener('submit', submitFormData);

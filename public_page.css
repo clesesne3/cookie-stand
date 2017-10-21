@@ -17,6 +17,41 @@ header {
   background-color: Salmon;
   color: #FFF;
 }
+#header_link {
+  text-decoration: none;
+  color: #FFF;
+}
+
+.nav-bar {
+  display: inline-flex;
+  margin: 0 auto;
+  color: Aqua;
+  font-size: 0.3em;
+  font-family: 'Roboto';
+  font-weight: bold;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: Aqua;
+  width: auto;
+  height: auto;
+  margin: 0 1em;
+}
+
+li {
+  border: 1px solid #FFF;
+  padding: 10px;
+  text-align: center;
+}
+
+.link {
+  display: block;
+  height: 242px;
+  margin-top: -242px;
+  visibility: hidden;
+}
 
 #slogan {
   width: 50%;
@@ -45,7 +80,7 @@ img {
   float: right;
 }
 
-#photo_section {
+#photo_div {
   margin: auto;
   background-image: url('img/salmon_pastry.png');
   background-repeat: no-repeat;
@@ -53,7 +88,28 @@ img {
   padding: 15%;
 }
 
-#location {
+#about_div {
+  margin: auto;
+  background-color: #FFF;
+  padding-bottom: 4%;
+  text-align: center;
+}
+#location_div {
+  margin: auto;
+  background-color: BurlyWood;
+  padding: 3%;
+  text-align: center;
+}
+#hours_div {
+  margin: auto;
+  background-color: #FFF;
+  padding: 2% 0 2% 0;
+}
+#hours_div img {
+  margin: 3% auto;
+  display: block;
+}
+#contact_div {
   margin: auto;
   background-color: BurlyWood;
   padding: 2%;
@@ -61,10 +117,12 @@ img {
 
 #address {
   font-size: 1.3em;
+  font-weight: bold;
 }
 
 #visit {
-  font-size: 1.5em;;
+  font-size: 1.5em;
+  font-style: italic;
 }
 
 h3 {
@@ -73,42 +131,37 @@ h3 {
   margin-right: auto;
   text-align: center;
   font-size: 2em;
-  /*color: #FFF;*/
-  text-decoration: underline;
-  /*text-shadow: 1px 1px Black;*/
 }
 
 p {
-  width: auto;
+  width: 50%;
   margin: auto;
   text-align: center;
-  font-weight: bold;
-  font-style: italic;
+  font-weight: normal;
+  font-style: normal;
   font-size: 1.2em;
   color: Black;
 }
 
-.social_media {
-  margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
+#family {
+  margin: 0 auto;
   text-align: center;
 }
+#family img {
+  width: 336px;
+  height: 230px
+}
 
-#fb {
-  margin: 5px;
-  width: 50px;
-  height: 50px;
+.social_media {
+  margin: 0 auto;
+  text-align: center;
+  background-color: BurlyWood;
 }
-#twitter {
-  margin: 5px;
-  width: 50px;
-  height: 50px;
-}
-#instagram {
-  margin: 5px;
-  width: 50px;
-  height: 50px;
+
+#fb, #twitter, #instagram {
+  margin: 0 0.5em;
+  width: 40px;
+  height: 40px;
 }
 
 footer {
@@ -118,9 +171,9 @@ footer {
   padding: 1.5%;
   text-align: center;
 }
-
 footer p {
-  color: Black;
+  font-style: italic;
+  font-weight: bold;
 }
 
 .highlights {
@@ -131,6 +184,10 @@ footer p {
 }
 
 .text {
-  font-family: Georgia serif; /* standard serif font for text*/
+  font-family: Georgia serif; /*standard serif font for text*/
   color: Black;
+}
+
+#address p {
+  margin: 2%;
 }

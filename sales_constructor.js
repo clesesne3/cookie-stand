@@ -73,7 +73,7 @@ function CreateLocation (name, minCustomer, maxCustomer, avgCookies) {
 }
 
 //stores each location object as a variable
-var firstAndPike = new CreateLocation('1st and Pike', 23, 65, 6.3);
+var firstAndPike = new CreateLocation('1st And Pike', 23, 65, 6.3);
 var seaTacAirport = new CreateLocation('SeaTac Airport', 3, 24, 1.2);
 var seattleCenter = new CreateLocation('Seattle Center', 11, 38, 3.7);
 var capitolHill = new CreateLocation('Capitol Hill', 20, 38, 2.3);
@@ -202,20 +202,36 @@ function submitFormData(event) {
   var maxCust = parseInt(event.target.maxCustomer.value);
   var averageCookies = parseInt(event.target.avgCookies.value);
 
-  // create new store location object
-  var newStore = new CreateLocation(storeName, minCust, maxCust, averageCookies);
+  // user can either add new store or update existing store info
+  for (var i = 0; i < allLocations.length; i++) {
+    if (storeName === allLocations[i].name) {
+      // edit existing store data
+      document.getElementById('cookiestands').deleteRow(allLocations.length + 1); //deletes footer row from table
+      document.getElementById('cookiestands').deleteRow(i + 1); // deletes target row from table
+      allLocations.splice(i, 1); // removes location from allLocations object
+      new CreateLocation(storeName, minCust, maxCust, averageCookies); // makes new location in allLocations object
+      allLocations[allLocations.length - 1].customerNum();
+      allLocations[allLocations.length - 1].cookiesPerHour();
+      allLocations[allLocations.length - 1].totalCookies();
+      allLocations[allLocations.length - 1].makeTableRow();
+      break;
+    }
+    // call methods to create new data row
+    else if (i === allLocations.length - 1) {
+      new CreateLocation(storeName, minCust, maxCust, averageCookies);
+      allLocations[allLocations.length - 1].customerNum();
+      allLocations[allLocations.length - 1].cookiesPerHour();
+      allLocations[allLocations.length - 1].totalCookies();
+      allLocations[allLocations.length - 1].makeTableRow();
+      break;
+    }
+  }
 
   // clear all form entry values
   event.target.name.value = null;
   event.target.minCustomer.value = null;
   event.target.maxCustomer.value = null;
   event.target.avgCookies.value = null;
-
-  // call methods to create new data row
-  allLocations[allLocations.length - 1].customerNum();
-  allLocations[allLocations.length - 1].cookiesPerHour();
-  allLocations[allLocations.length - 1].totalCookies();
-  allLocations[allLocations.length - 1].makeTableRow();
 
   // check for footer (hourly total) row; deletes & refreshes after new store created
   var footerPresent = document.getElementById('footer');
